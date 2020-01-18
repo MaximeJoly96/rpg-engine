@@ -31,15 +31,5 @@ namespace Tests
 
             Assert.IsNotNull(obj);
         }
-
-        [UnityTest]
-        public IEnumerator CreateCursor()
-        {
-            yield return new WaitForEndOfFrame();
-            _cursorManager = Object.Instantiate(Resources.Load<CursorManager>("Prefabs/CursorManager"));
-            GameObject obj = _cursorManager.CreateObject(_cursorManager.Cursor);
-
-            Assert.IsNotNull(obj);
-        }
     }
 }

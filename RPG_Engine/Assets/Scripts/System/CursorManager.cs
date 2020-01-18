@@ -8,7 +8,7 @@ namespace RPG_Engine.System
         [SerializeField]
         private GameObject _playerCursor;
         [SerializeField]
-        private Canvas _uiCanvas;
+        private GameObject _uiCanvas;
         #pragma warning restore 0649
 
         public GameObject Cursor { get { return _playerCursor; } }

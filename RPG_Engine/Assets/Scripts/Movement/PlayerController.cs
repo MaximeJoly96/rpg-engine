@@ -24,7 +24,7 @@ namespace RPG_Engine.Movement
             if (pm)
                 pm.StopMovement();
 
-            Ray ray = Camera.main.ScreenPointToRay(position);
+            Ray ray = UnityEngine.Camera.main.ScreenPointToRay(position);
             float distance;
             _plane.Raycast(ray, out distance);
             Vector3 projPosition = ray.GetPoint(distance);

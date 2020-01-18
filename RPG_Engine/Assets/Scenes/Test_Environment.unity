@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -432,9 +433,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!223 &2064888098 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 4756591881978806839, guid: 19e38a738698241459dcfdc41ac6e35a,
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa08edb61d936f4cb1126be45598863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1598632882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4756591881978806794, guid: 19e38a738698241459dcfdc41ac6e35a,
     type: 3}
   m_PrefabInstance: {fileID: 4756591879947629333}
   m_PrefabAsset: {fileID: 0}
@@ -697,6 +710,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _uiCanvas
       value: 
-      objectReference: {fileID: 2064888098}
+      objectReference: {fileID: 1598632882}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6407ab7ba380143b50a4640cf152d1, type: 3}

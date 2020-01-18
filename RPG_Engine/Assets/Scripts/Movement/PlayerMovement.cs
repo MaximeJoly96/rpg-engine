@@ -7,6 +7,7 @@ namespace RPG_Engine.Movement
         private Vector3 _endPosition;
 
         private const float SPEED = 5.0f;
+        private const float MIN_DISTANCE_BEFORE_END = 0.02f;
 
         public void Init(Vector3 startPosition, Vector3 endPosition)
         {
@@ -20,7 +21,7 @@ namespace RPG_Engine.Movement
         {
             transform.position = Vector3.MoveTowards(transform.position, _endPosition, SPEED * Time.deltaTime);
 
-            if(Vector3.Distance(transform.position, _endPosition) <= 0.02f)
+            if(Vector3.Distance(transform.position, _endPosition) <= MIN_DISTANCE_BEFORE_END)
                 Destroy(this);
         }
 
