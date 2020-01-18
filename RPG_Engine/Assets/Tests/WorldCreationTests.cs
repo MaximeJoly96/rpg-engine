@@ -10,6 +10,7 @@ namespace Tests
     {
         private PlayerManager _playerManager;
         private EnvironmentManager _envManager;
+        private CursorManager _cursorManager;
 
         [UnityTest]
         public IEnumerator CreateEnvironment()
@@ -27,6 +28,16 @@ namespace Tests
             yield return new WaitForEndOfFrame();
             _playerManager = Object.Instantiate(Resources.Load<PlayerManager>("Prefabs/PlayerManager"));
             GameObject obj = _playerManager.CreateObject(_playerManager.Player);
+
+            Assert.IsNotNull(obj);
+        }
+
+        [UnityTest]
+        public IEnumerator CreateCursor()
+        {
+            yield return new WaitForEndOfFrame();
+            _cursorManager = Object.Instantiate(Resources.Load<CursorManager>("Prefabs/CursorManager"));
+            GameObject obj = _cursorManager.CreateObject(_cursorManager.Cursor);
 
             Assert.IsNotNull(obj);
         }
