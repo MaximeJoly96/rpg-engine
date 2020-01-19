@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using RPG_Engine.Movement;
 
 namespace RPG_Engine.Camera
 {
@@ -10,11 +11,14 @@ namespace RPG_Engine.Camera
         {
             if (Input.GetKey(KeyCode.Z))
                 transform.position += Vector3.forward * Time.deltaTime * SPEED;
-            else if (Input.GetKey(KeyCode.Q))
+
+            if (Input.GetKey(KeyCode.Q))
                 transform.position += Vector3.left * Time.deltaTime * SPEED;
-            else if (Input.GetKey(KeyCode.S))
+
+            if (Input.GetKey(KeyCode.S))
                 transform.position += Vector3.back * Time.deltaTime * SPEED;
-            else if (Input.GetKey(KeyCode.D))
+
+            if (Input.GetKey(KeyCode.D))
                 transform.position += Vector3.right * Time.deltaTime * SPEED;
         }
     }

@@ -32,6 +32,14 @@ namespace RPG_Engine.Movement
             pm = gameObject.AddComponent<PlayerMovement>();
             pm.Init(transform.position, projPosition);
         }
+
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+
+            }
+        }
     }
 }
 
