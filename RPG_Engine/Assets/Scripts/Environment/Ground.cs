@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RPG_Engine.Enviroment
+namespace RPG_Engine.Environment
 {
     public class Ground : MonoBehaviour
     {
