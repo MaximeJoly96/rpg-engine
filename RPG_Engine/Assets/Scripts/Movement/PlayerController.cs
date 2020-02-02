@@ -1,45 +1,32 @@
-﻿using RPG_Engine.Cursor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RPG_Engine.Movement
 {
     public class PlayerController : MonoBehaviour
     {
-        private PlayerCursor _playerCursor;
-        private Plane _plane;
-
-        private void Start()
+        private static float SPEED
         {
-            _playerCursor = FindObjectOfType<PlayerCursor>();
-            _playerCursor.MovementEvent.AddListener(MoveToLocation);
-
-            _plane = new Plane(new Vector3(0.0f, 0.0f, 0.0f),
-                               new Vector3(1.0f, 0.0f, 0.0f),
-                               new Vector3(0.0f, 0.0f, 1.0f));
+            get { return 3.0f * Time.deltaTime; }
         }
 
-        private void MoveToLocation(Vector3 position)
-        {
-            PlayerMovement pm = GetComponent<PlayerMovement>();
-            if (pm)
-                pm.StopMovement();
-
-            Ray ray = UnityEngine.Camera.main.ScreenPointToRay(position);
-            float distance;
-            _plane.Raycast(ray, out distance);
-            Vector3 projPosition = ray.GetPoint(distance);
-
-            pm = gameObject.AddComponent<PlayerMovement>();
-            pm.Init(transform.position, projPosition);
-        }
+        private Vector3 _directionVector;
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.Z))
             {
-
+                _directionVector = 
             }
+                transform.Translate(Vector3.forward * SPEED);
+
+            if (Input.GetKey(KeyCode.Q))
+                transform.Translate(Vector3.left * SPEED);
+
+            if (Input.GetKey(KeyCode.S))
+                transform.Translate(Vector3.back * SPEED);
+
+            if (Input.GetKey(KeyCode.D))
+                transform.Translate(Vector3.right * SPEED);
         }
     }
 }
-
