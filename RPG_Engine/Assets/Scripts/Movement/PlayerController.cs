@@ -14,9 +14,6 @@ namespace RPG_Engine.Movement
         private void Update()
         {
             if (Input.GetKey(KeyCode.Z))
-            {
-                _directionVector = 
-            }
                 transform.Translate(Vector3.forward * SPEED);
 
             if (Input.GetKey(KeyCode.Q))
